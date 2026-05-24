@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 270 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 270 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 50% 10%;
+
+    --primary: 271 81% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 280 60% 95%;
+    --secondary-foreground: 271 81% 40%;
+
+    --muted: 270 20% 96%;
+    --muted-foreground: 270 10% 45%;
+
+    --accent: 330 85% 60%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 20% 90%;
+    --input: 270 20% 90%;
+    --ring: 271 81% 56%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for Cene-Connect */
+    --gradient-primary: linear-gradient(135deg, hsl(271, 81%, 56%) 0%, hsl(330, 85%, 60%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(280, 60%, 98%) 0%, hsl(0, 0%, 100%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(280, 40%, 99%) 100%);
+    
+    --shadow-soft: 0 4px 20px -4px hsl(271 81% 56% / 0.15);
+    --shadow-glow: 0 0 30px hsl(271 81% 56% / 0.3);
+    --shadow-card: 0 2px 12px -2px hsl(270 50% 10% / 0.08);
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', sans-serif;
+
+    --sidebar-background: 280 60% 98%;
+    --sidebar-foreground: 270 50% 10%;
+    --sidebar-primary: 271 81% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 280 60% 95%;
+    --sidebar-accent-foreground: 271 81% 40%;
+    --sidebar-border: 270 20% 90%;
+    --sidebar-ring: 271 81% 56%;
+  }
+
+  .dark {
+    --background: 270 30% 6%;
+    --foreground: 270 10% 95%;
+
+    --card: 270 25% 10%;
+    --card-foreground: 270 10% 95%;
+
+    --popover: 270 25% 10%;
+    --popover-foreground: 270 10% 95%;
+
+    --primary: 271 81% 65%;
+    --primary-foreground: 270 30% 6%;
+
+    --secondary: 270 30% 15%;
+    --secondary-foreground: 271 81% 75%;
+
+    --muted: 270 20% 15%;
+    --muted-foreground: 270 10% 60%;
+
+    --accent: 330 85% 65%;
+    --accent-foreground: 270 30% 6%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 20% 18%;
+    --input: 270 20% 18%;
+    --ring: 271 81% 65%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(271, 81%, 65%) 0%, hsl(330, 85%, 65%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(270, 25%, 8%) 0%, hsl(270, 30%, 6%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(270, 25%, 12%) 0%, hsl(270, 25%, 10%) 100%);
+
+    --shadow-soft: 0 4px 20px -4px hsl(271 81% 65% / 0.2);
+    --shadow-glow: 0 0 30px hsl(271 81% 65% / 0.4);
+    --shadow-card: 0 2px 12px -2px hsl(0 0% 0% / 0.3);
+
+    --sidebar-background: 270 25% 8%;
+    --sidebar-foreground: 270 10% 95%;
+    --sidebar-primary: 271 81% 65%;
+    --sidebar-primary-foreground: 270 30% 6%;
+    --sidebar-accent: 270 30% 15%;
+    --sidebar-accent-foreground: 271 81% 75%;
+    --sidebar-border: 270 20% 18%;
+    --sidebar-ring: 271 81% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-soft {
+    box-shadow: var(--shadow-soft);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+}
